@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Sitio Web</title>
     <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
-
     <link href="{{ url_for('static', filename='css/carrusel.css') }}" rel="stylesheet">
 
 </head>
@@ -72,9 +71,25 @@
 
         </div>
     </div>
-    <!--fin cards-->
 
-    <!--fin cards-->
+
+
+    <!-- Animaciones predefinidas con class tailwind css-->
+    <button class="animated-bounce bg-blue-500 text-white px-4 py-2 rounded ">
+        Haz clic aquí
+    </button>
+    <button class="animated-SPING bg-blue-500 text-white px-4 py-2 rounded ">
+        Haz clic aquí
+    </button>
+    <!--Carrusel2-->
+    <div class="relative w-full overflow-hidden h-64 mt-10">
+        <div class="flex animate-slide-x">
+            <img src="{{ url_for('static', filename='image1.jpg') }}" class="w-full h-64 object-cover" alt="Image 1">
+            <img src="{{ url_for('static', filename='image2.jpg') }}" class="w-full h-64 object-cover" alt="Image 2">
+            <img src="{{ url_for('static', filename='image3.jpg') }}" class="w-full h-64 object-cover" alt="Image 3">
+        </div>
+    </div>
+
     <!--pie de pagina-->
     <footer class="bg-gray-900 text-white py-6 mt-10">
         <div class="container mx-auto px-6 text-center">
@@ -84,6 +99,7 @@
     </footer>
     <!-- fin pie de pagina-->
     <script src="{{ url_for('static', filename='js/card.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/carrusel.js') }}"></script>
 </body>
 
 </html>

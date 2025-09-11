@@ -1,33 +1,21 @@
-<<<<<<< HEAD
-.carousel-container {
-    overflow: hidden;
-    width: 100%;
-    max-width: 1800px;
-    margin: auto;
-}
-.carousel-inner {
-    display: flex;
-    
-}
-.carousel-item {
-    min-width: 100%;
-    box-sizing: border-box;
-=======
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-.carousel-track {
-    display: flex;
-    width: max-content;
-    animation: scroll 20s linear infinite;
+@import "tailwindcss";
 
-}
-.carousel-track:hover {
-    animation-play-state: paused;
->>>>>>> 154d9c7 (Primer commit)
+@layer utilities {
+    @keyframes slide-x {
+        0% {
+            transform: translateX(0);
+        }
+        33% {
+            transform: translateX(-100%);
+        }
+        66% {
+            transform: translateX(-200%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+    .animate-slide-x {
+        animation: slide-x 9s ease-in-out infinite;
+    }   
 }
