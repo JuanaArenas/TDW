@@ -1,1 +1,7 @@
 node_modules
+templates/*.html
+app.py
+package-lock.json
+package.json
+readme.md
+

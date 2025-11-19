@@ -11,6 +11,20 @@
 </head>
 
 <body class="">
+    <!--chatbot-->
+    <div class="w-full max-w-md bg-white shadow-lg rounded-lg p-4">
+        <h2 class="text-xl font-bold mb-4 text-center text-blue-600">Chat Educativo</h2>
+        <div id="chat" class="h-64 overflow-y-auto border p-2 mb-4 bg-gray-50 rounded"></div>
+        <div class="flex">
+            <input id="message" type="text" class="flex-grow border rounded-l px-2 py-1"
+                placeholder="Escribe tu mensaje...">
+            <button onclick="sendMessage()" class="bg-blue-500 text-white px-4 py-1 rounded-r">Enviar</button>
+        </div>
+        <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+    </div>
+    <!--Fin chatbot-->
+
+
     <!--menu desplegable-->
     <div class="">
         <nav class="px-4 py-4 sm:flex sm:items-center sm:justify-between bg-sky-500 hover:bg-sky-700">
@@ -43,54 +57,12 @@
             <img src="{{ img }}" class="w-full h-64 w-96 object-cover" alt="Image {{ loop.index }}">
             {% endfor %}
 
-            {% for img in imagenes %}
-            <img src="{{ img }}" class="w-full h-64 w-96 object-cover" alt="Image {{ loop.index }}">
-            {% endfor %}
-
         </div>
     </div>
     <!--Fin carrusel-->
-    <!--cards-->
-    <div class="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl relative group">
-        <img src="{{ url_for('static', filename='image/python.png') }}" alt="Recurso educativo" alt="Recurso educativo"
-            class="h-80 w-72 object-cover rounded-t-xl" />
-        <div class="px-4 py-3 w-72">
-            <span class="text-gray-400 mr-3 uppercase text-xs">Recurso</span>
-            <p class="text-lg font-bold text-black truncate block capitalize">Innovación en Cañete</p>
-            <div class="flex items-center">
-                <p class="text-sm text-gray-600 cursor-auto my-3">Autor: Juana C.</p>
-                <button onclick="mostrarInfo(this)"
-                    class="ml-auto bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 transition text-sm">Ver
-                    más
-                </button>
-            </div>
-            <div class="info-extra hidden mt-2 text-sm text-gray-700">
-                Proyecto interdisciplinario que conecta tecnología y cultura local. Adaptado a estándares educativos
-                nacionales.
-            </div>
-
-        </div>
-    </div>
 
 
-
-    <!-- Animaciones predefinidas con class tailwind css-->
-    <button class="animated-bounce bg-blue-500 text-white px-4 py-2 rounded ">
-        Haz clic aquí
-    </button>
-    <button class="animated-SPING bg-blue-500 text-white px-4 py-2 rounded ">
-        Haz clic aquí
-    </button>
-    <!--Carrusel2-->
-    <div class="relative w-full overflow-hidden h-64 mt-10">
-        <div class="flex animate-slide-x">
-            <img src="{{ url_for('static', filename='image1.jpg') }}" class="w-full h-64 object-cover" alt="Image 1">
-            <img src="{{ url_for('static', filename='image2.jpg') }}" class="w-full h-64 object-cover" alt="Image 2">
-            <img src="{{ url_for('static', filename='image3.jpg') }}" class="w-full h-64 object-cover" alt="Image 3">
-        </div>
-    </div>
-
-    <!--pie de pagina-->
+    pagina-->
     <footer class="bg-gray-900 text-white py-6 mt-10">
         <div class="container mx-auto px-6 text-center">
             <p class="text-sm">&copy; {{ year }} Todos los derechos reservados.</p>

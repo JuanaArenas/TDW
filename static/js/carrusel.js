@@ -1,23 +1,36 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const carouselInner = document.querySelector(".carousel-inner");
+    const totalSlides = document.querySelectorAll(".carousel-item").length;
+    let currentIndex = 0;
 
-const carousel = document.querySelector(".carousel-inner");
-const totalSlides = document.querySelectorAll(".carousel-item").length;
-let index = 0;
+    const nextButton = document.getElementById("next");
+    const prevButton = document.getElementById("prev");
 
-function updateCarousel() {
-    carousel.style.transform = `translateX(-${index * 100}%)`;
-}
+    function updateCarousel() {
+        const offset = -currentIndex * 100;
+        carouselInner.style.transform = `translateX(${offset}%)`;
+    }
 
-function nextSlide() {
-    index = (index + 1) % totalSlides;
-    updateCarousel();
-}
+    // Function to show the next slide
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel();
+    }
 
-function prevSlide() {
-    index = (index - 1 + totalSlides) % totalSlides;
-    updateCarousel();
-}
+    // Function to show the previous slide
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+    }
 
-document.getElementById("next").addEventListener("click", nextSlide);
-document.getElementById("prev").addEventListener("click", prevSlide);
+    // Event listeners for the navigation buttons
+    if (nextButton) {
+        nextButton.addEventListener("click", nextSlide);
+    }
+    if (prevButton) {
+        prevButton.addEventListener("click", prevSlide);
+    }
 
-setInterval(nextSlide, 3000); // Cambio automático cada 3 segundos
+    // Automatic slide change every 3 seconds
+    setInterval(nextSlide, 3000);
+});
